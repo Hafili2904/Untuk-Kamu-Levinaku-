@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Untuk Kamu, Levinaku 💗</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Amatic+SC&family=Gloria+Hallelujah&family=Fredericka+the+Great&family=Loved+by+the+King&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Amatic+SC&family=Gloria+Hallelujah&family=Fredericka+the+Great&family=Loved+by+the+King&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+</div>
+
+  <div class="bg-heart"></div>
+  <div class="container">
+    <h1 class="title">💖Hai Cintaku💖</h1>
+    <p class="subtitle">Aku punya sesuatu buat kamu...</p>
+    <button onclick="showLetter()">Cobaaaa Pencettttt yangggggg hehhhehehhehe 💌</button>
+    <div id="love-letter" class="letter hidden">
+      <p>Sayangku,</p>
+      <p>Aku cuma mau bilang, terima kasih karena udah selalu ada.</p>
+      <p>Kamu itu rumah, peluk, dan tempat ternyaman buat aku.</p>
+      <p>Aku nggak butuh kata-kata manis... cukup kamu yang tetap di sini.</p>
+      <p>Aku sayang kamu, lebih dari yang bisa dijelasin sama kata-kata.</p>
+        <p>Aku tahu belakangan ini mungkin kayaknya ada yang aneh. Aku ngerti kalau kamu lagi ngerasa nggak nyaman, apalagi ada orang yang ga jelas tiba tiba ada.</p>
+        <p>Cuma aku mau kamu tahu — aku sama dia udah nggak ada apa-apa lagi. Bener-bener udah selesai sama ga akan mungkin lagi sama sama bersama lagi. Yang tadi itu, cuma karena aku lagi ngerjain tugas dan kebetulan dia terlibat. Ya, aku akui, aku salah karena nggak bilang kalo dia udah dateng, dan itu mungkin bikin kamu kepikiran.</p>
+        <p>Tapi tolong, percaya sama aku...</p>
+        <p>Hati aku cuma buat kamu. Aku sayang banget sama kamu. Lebih dari yang bisa aku jelasin pakai kata-kata. Nggak akan mungkin aku sia-siain kamu, karena kamu segalanya buat aku.</p>
+        <p>Kamu itu satu-satunya alasan aku terus semangat. Dan aku nggak mau kehilangan kamu cuma karena hal kayak gini.</p>
+        <p>Maafin aku, ya sayangggg</p>
+  <div class="gallery">
+  <h2>Kenangan Kita 📸</h2>
+  <h3>Pencetttt cobaaaa satuuu satuuu yangggggg potooonyaa hehhhehehhehe 😋😋😋</h3>
+
+  <div class="photo-row left">
+    <img src="foto/poto1.jpg" alt="Foto 1" class="clickable-img" />
+    <p>Inget nggak waktu ini? Asli ini aku grogi banget udah mah degdegan lagi 😆💕</p>
+  </div>
+
+  <div class="photo-row right">
+    <img src="foto/poto2.jpg" alt="Foto 1" class="clickable-img" />
+    <p>Waktu ini juga, aku ngerasa grogi, degdegan liat we aku nya😌💞</p>
+  </div>
+
+  <div class="photo-row left">
+    <img src="foto/poto3.jpg" alt="Foto 1" class="clickable-img" />
+    <p>Kamu cantik banget waktu itu, aku masih inget jelas 😍</p>
+  </div>
+
+  <!-- Tambah lagi sesuai foto -->
+</div>
+
+        <p class="closing">Selalu untuk kamu,</p>  
+        <p class="signature">💘Haphap💘</p>
+      <div id="love-letter" class="letter hidden">
+      <p class="closing">Selalu untukmu,</p>
+      <p class="signature">💘Haphap💘</p>
+    </div>
+</div>
+
+  <!-- Lightbox overlay -->
+<div id="lightbox" class="lightbox">
+  <span class="close">&times;</span>
+  <img class="lightbox-img" src="" alt="Foto Besar" />
+</div>
+
+  <script>
+    function showLetter() {
+      document.getElementById("love-letter").classList.remove("hidden");
+  const imgs = document.querySelectorAll('.clickable-img');
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.querySelector('.lightbox-img');
+  const closeBtn = document.querySelector('.close');
+
+  imgs.forEach(img => {
+    img.addEventListener('click', () => {
+      lightboxImg.src = img.src;
+      lightbox.classList.add('show');
+    });
+  });
+
+  function closeLightbox() {
+    lightbox.classList.remove('show');
+    // Delay reset src supaya transisi hilangnya smooth
+    setTimeout(() => {
+      lightboxImg.src = "";
+    }, 400);
+  }
+
+  closeBtn.addEventListener('click', closeLightbox);
+
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) {
+      closeLightbox();
+    }
+  });
+imgs.forEach(img => {
+  img.addEventListener('click', () => {
+    lightboxImg.src = img.src;
+    lightbox.classList.add('show');
+    document.body.classList.add('no-scroll'); // disable scroll + klik
+  });
+});
+
+function closeLightbox() {
+  lightbox.classList.remove('show');
+  document.body.classList.remove('no-scroll'); // aktifin lagi
+  setTimeout(() => {
+    lightboxImg.src = "";
+  }, 400);
+}
+  const heartsContainer = document.getElementById('hearts');
+
+  function createHeart() {
+    const heart = document.createElement('div');
+    heart.classList.add('heart');
+    heart.textContent = '❤️';
+    heart.style.left = Math.random() * 100 + 'vw';
+    heart.style.fontSize = Math.random() * 20 + 20 + 'px';
+    heart.style.animationDuration = (Math.random() * 2 + 3) + 's';
+
+    heartsContainer.appendChild(heart);
+
+    setTimeout(() => {
+      heart.remove();
+    }, 5000);
+  }
+
+  setInterval(createHeart, 300);
+
+    }
+</script>
+<div class="hearts" id="hearts"></div>
+</body>
+</html>
